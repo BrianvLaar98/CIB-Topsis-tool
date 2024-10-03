@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIB and TOPSIS Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      margin-bottom: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    th, td {
+      text-align: center;
+    }
+    input[type="number"] {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CIB and TOPSIS Tool</h1>
+
+  <div class="container">
+    <h3>Step 1: Add Descriptors</h3>
+    <input type="text" id="descriptorInput" placeholder="Add descriptor">
+    <button onclick="addDescriptor()">Add Descriptor</button>
+    <ul id="descriptorList"></ul>
+  </div>
+
+  <div class="container">
+    <h3>Step 2: Add Variants for Each Descriptor</h3>
+    <select id="descriptorSelect"></select>
+    <input type="text" id="variantInput" placeholder="Add variant">
+    <button onclick="addVariant()">Add Variant</button>
+    <ul id="variantList"></ul>
+  </div>
+
+  <div class="container">
+    <h3>Step 3: Pairwise Comparison (AHP)</h3>
+    <table id="pairwiseTable"></table>
+    <button onclick="calculateWeights()">Calculate Weights</button>
+    <div id="weightResult"></div>
+  </div>
+
+  <div class="container">
+    <h3>Step 4: Scenario Ranking (TOPSIS)</h3>
+    <button onclick="calculateTopsis()">Rank Scenarios</button>
+    <div id="topsisResult"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
